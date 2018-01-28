@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "hbs": "^4.0.1",
+    "lodash": "^4.17.4",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0",
+    "yargs": "^10.1.1"
+  }
+}
