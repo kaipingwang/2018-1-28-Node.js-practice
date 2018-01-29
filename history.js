@@ -180,3 +180,14 @@ app.use((req,res,next)=>{
  console.log(req.method, req.url);
  //or render(middleware.html);
 })  // middleware to get user connection detail  => next() is used to implement async as long as next() then program can continue to implement following code
+
+//################################ setup github
+ls -al ~./ssh // check whether ssh key has existed
+ssh-keygen -t rsa -b 4096 -C 'kpw3@st-andrews.ac.uk' // add ssh key into  /Users/Kevin/.ssh/id_rsa
+git init // initialize the key in the folder
+pbcopy < ~/.ssh/id_rsa.pub //(MAC_pro)copy ssh_key into github
+eval "$(ssh-agent -s)"// check pid id exist
+ssh-add ~/.ssh/id_rsa// specify file location
+pbcopy < ~/.ssh/id_rsa.pub// copy pssh-key to github
+ssh -T git@github.com//test whether it is successful
+git push 
