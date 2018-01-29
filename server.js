@@ -1,7 +1,8 @@
 var express = require('express')
 var app = express();
 var hbs = require('hbs');
-const port = process.env.PORT||3000;
+const port = process.env.PORT;
+
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 app.use((req,res,next)=>{
