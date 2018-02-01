@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express();
 var hbs = require('hbs');
-const port = process.env.PORT;
+const port = process.env.PORT ||3000;
 
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
@@ -10,6 +10,7 @@ app.use((req,res,next)=>{
  var obj = {meassage:"this is middleware U have to login"};
  res.render('middleware.html', obj);
 })
+
 app.get('/',  (req, res)=> {
   let obj={
     name:"Kevin",
@@ -17,6 +18,7 @@ app.get('/',  (req, res)=> {
   }
   res.render('index.html', obj);// render only can be used in the file(html type)in the view engine; it can pass obj
 })
+
 
 
 app.use(express.static(__dirname+'/public'));
@@ -31,4 +33,6 @@ app.get('/help',  (req, res)=> {
   res.render('help.html', {name:"kevin"});// render only can be used in the file(html type)in the view engine; it can pass obj
 })
 
-app.listen(port);
+app.listen(port,()=>{
+console.log(port);
+});
